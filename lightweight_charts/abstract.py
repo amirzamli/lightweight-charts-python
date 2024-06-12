@@ -739,6 +739,17 @@ class AbstractChart(Candlestick, Pane):
         """
         self._lines.append(Line(self, name, color, style, width, price_line, price_label))
         return self._lines[-1]
+    
+    def create_line_without_legend(
+            self, name: str = '', color: str = 'rgba(214, 237, 255, 0.6)',
+            style: LINE_STYLE = 'solid', width: int = 2,
+            price_line: bool = True, price_label: bool = True
+    ) -> Line:
+        """
+        Creates and returns a Line object.
+        """
+        self._lines.append(Line(self, name, color, style, width, price_line, price_label))
+        return self._lines[-1]
 
     def create_histogram(
             self, name: str = '', color: str = 'rgba(214, 237, 255, 0.6)',
